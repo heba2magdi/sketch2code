@@ -46,7 +46,7 @@ import { useNavigate } from 'react-router-dom';
     //         alert(error.message);
     // });
     // };
-export const LoginSignup = () => {
+export const SignupLogin = () => {
     // const emailRef=useRef("");
     // const passwordRef=useRef()
     // const nameRef=useRef()
@@ -63,56 +63,39 @@ export const LoginSignup = () => {
     //   } catch (error) {
     //     console.error('Error signing up:', error.message);
     //   }
-    navigate("/signup");
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth,name, email, password);
+        console.log('User signed up', userCredential.user);
+        alert('User signed up', userCredential.user)
+        // navigate('/Login')
+      } catch (error) {
+        console.error('Error signing up', error.message);
+        alert( error.message);
+      }
     //   setAction("Sign Up");
     };
-    const handleLogin = async () => {
+    const login = async () => {
         // try {
         //   const userCredential = await signInWithEmailAndPassword(auth, email, password);
         //   console.log('User logged in:', userCredential.user);
         // } catch (error) {
         //   console.error('Error logging in:', error.message);
         // }
-        try {
-        
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            console.log('User logged in!', userCredential.user);
-            console.log("you are successfully signed in!");
-            console.log(auth.currentUser);
-            alert('User logged in!', userCredential.user);
-            // navigate('/account');
-          } catch (error) {
-            console.error('Error logging in!', error.message);
-            console.log(error.code);
-          switch (error.code){
-              case"auth/invalid-email":
-              errMsg.value="invalid email";
-              alert(errMsg.value);
-              break;
-              case"auth/user-not-found":
-              errMsg.value="no account with that email was found";
-              alert(errMsg.value);
-              break;
-              case"auth/wrong-password":
-              errMsg.value="incorrect password";
-              alert(errMsg.value);
-              break;
-              default:
-              errMsg.value="Email or password was incorrect";
-              alert(errMsg.value);
-              break;
-          }
-          }
+        navigate("/login");
       };
     // const [action,setAction] = useState("Login");
   return (
     <div>
         <div className="container">
             <div className="header">
-                <div className="text">Login</div>
+                <div className="text">Sign-up</div>
                 <div className="underline"></div>
             </div>
             <div className="inputs">
+                <div className="input">
+                    <img src={person_icon} alt="" />
+                    <input type="name" placeholder='Name' value={name} onChange={(e) => setName(e.target.value)}/>
+                </div>
                 <div className="input">
                     <img src={email_icon} alt="" />
                     <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
@@ -122,15 +105,14 @@ export const LoginSignup = () => {
                     <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)}/>
                 </div>
             </div>
-            <div className="forgot-password">forgot-password?<span>Click here!</span></div>
             <div className="submit-container">
             
-            <div className="submit gray" onClick={handleSignup} >Sign Up</div>
-            <div className="submit" onClick={handleLogin}>Login</div>
+            <div className="submit" onClick={handleSignup} >Sign Up</div>
+            <div className="submit gray" onClick={login}>Login</div>
         </div>
         </div>
         <div className="below"></div>
         </div>
   )
 }
-export default LoginSignup
+export default SignupLogin
