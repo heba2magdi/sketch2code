@@ -50,7 +50,7 @@ export const SignupLogin = () => {
     // const emailRef=useRef("");
     // const passwordRef=useRef()
     // const nameRef=useRef()
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = useState(null);
     const [password, setPassword] = useState('');
     const [name, setName]=useState('');
     const errMsg=useState('');
@@ -64,7 +64,7 @@ export const SignupLogin = () => {
     //     console.error('Error signing up:', error.message);
     //   }
     try {
-        const userCredential = await createUserWithEmailAndPassword(auth,name, email, password);
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         console.log('User signed up', userCredential.user);
         alert('User signed up', userCredential.user)
         // navigate('/Login')

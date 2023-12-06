@@ -103,6 +103,7 @@ export const LoginSignup = () => {
               break;
           }
           }
+          navigate("/account");
       };
     // const [action,setAction] = useState("Login");
   return (
