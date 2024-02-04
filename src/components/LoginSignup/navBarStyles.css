@@ -3,6 +3,10 @@ body{
     background-color: #d4f0fc;
 }
 
+.logo{
+    margin-top: 20px;
+}
+
 nav{
     display: flex;
     align-items: center;

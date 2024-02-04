@@ -1,10 +1,18 @@
+.home-page{
+    align-items: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+
+
+}
 .main{
     color: #01303f;
-    margin-top: 100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 90%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -16,7 +24,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.left-container a{
+.left-container a , .btn-about{
     /* cursor: pointer;
     margin-left: 20px;
     margin-top: 150px;
@@ -52,7 +60,7 @@
     display: flex;
     flex-direction: column;
 }
-.right-container div a{
+.right-container div a {
     cursor: pointer;
     margin-top: 20px;
     border: 2px solid #01303f;
@@ -91,7 +99,7 @@
 }
 @media screen and (max-width:769px) {
 
-    .container{
+    .main{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -124,5 +132,89 @@
     .right-container div{
         margin-top: 30px;
     }
+    .about-content{
+        width: 90%;
+        max-width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        }
+        .about-text{
+            margin-top: 50px;
+        }
     
 }
+
+
+
+.about{
+    margin-top: 80px;
+    width: 100%;
+    padding: 78px 0px;
+
+}
+.about img{
+    height: 600px;
+    width: 500px;
+}
+.about-text{
+    width: 550px;
+}
+.about-content{
+width: 90%;
+max-width: 95%;
+margin: 0 auto;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+.about-text h1{
+    color: #01303f;
+    font-size: 80px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.about-text h5{
+    color: #01303f;
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+span{
+    color: #02a9f7;
+}
+
+.about-text p{
+    color: #01303f;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+    text-align: left;
+}
+.tech{
+    margin: 0;
+    padding: 0;
+    background: #01303f;
+    width: 100%;
+    color: #fff;
+    box-sizing: border-box;
+}
+/* button{
+    background: #f9004d;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: .4s;
+}
+button:hover{
+    background:transparent;
+    border: 2px solid #f9004d;
+    cursor: pointer;
+} */
